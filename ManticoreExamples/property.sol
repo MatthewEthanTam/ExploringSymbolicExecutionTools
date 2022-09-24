@@ -1,6 +1,6 @@
 //  MIT License
 pragma solidity ^0.8.0;
-import "ManticoreTestExamples/Test.sol"; 
+import "ManticoreExamples/Test.sol"; 
 
 contract TestToken is Token{ 
     constructor() public{ 

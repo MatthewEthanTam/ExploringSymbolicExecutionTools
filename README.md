@@ -1,4 +1,5 @@
 # ExploringSymbolicExecutionTools
+The two tools I will be testing is `Manticore` for Solidity Smart Contracts and `CrossHair` for python code.
 ### Setup 
 `python3 -m venv env` 
 
