@@ -1,6 +1,7 @@
 from typing import List
-def duplicate_list(a: List[int]) -> List[int]:
-    """"
-    post: len(__return__) == len(a) * 2
-    """
-    return a
+def consecutive_pairs(numbers: List[float]) -> float:
+    ''' 
+    pre: len(numbers) >0
+    post: min(numbers) <= __return__ <= max(numbers)
+    '''
+    return sum(numbers) - len(numbers)
