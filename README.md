@@ -6,7 +6,9 @@ The two tools I will be testing is `Manticore` for Solidity Smart Contracts and 
 `source env/bin/activate`
 
 `pip install -r requirements.txt`
-### Running Manticore
-` manticore-verifier ManticoreTestExamples/property.sol --contract TestToken  `
+### Running Manticore (Solidity)
+` manticore-verifier ManticoreExamples/property.sol --contract TestToken  `
+` manticore ManticoreExamples/Test.sol --contract Ownership `
 
-### Running Other
+### Running CrossHair (Python)
+` crosshair check CrossHairExample/Test.py  ` 
