@@ -1,13 +1,14 @@
 //  MIT License
+import "ManticoreExamples/Test.sol";
 pragma solidity ^0.8.0;
-import "ManticoreExamples/Test.sol"; 
+contract TestToken is Token{
+        constructor() public{
+                //here lets initialize the thing
+                balances[msg.sender] = 10000; //deployer account owns it all!
+        }
 
-contract TestToken is Token{ 
-    constructor() public{ 
-        balances[msg.sender] = 10000; // deployer account owns all the tokens (10000) 
-    }
-    function crytic_test_balance() view public returns (bool) {
-        return balances[msg.sender] <= 10000;
-    }
+        function crytic_test_balance() public returns (bool){
+                return balances[msg.sender] <= 10000; //nobody can have more than 100% of the tokens
+        }
 
 }

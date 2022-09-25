@@ -7,8 +7,8 @@ The two tools I will be testing is `Manticore` for Solidity Smart Contracts and 
 
 `pip install -r requirements.txt`
 ### Running Manticore (Solidity)
-` manticore-verifier ManticoreExamples/property.sol --contract TestToken  `
-` manticore ManticoreExamples/Test.sol --contract Ownership `
+` manticore ManticoreExamples/Reentrancy.sol --contract Reentrance `
+` manticore-verifier ManticoreExamples/Reentrancy.sol --contract Reentrance `
 
 ### Running CrossHair (Python)
 ` crosshair check CrossHairExample/Test.py  ` 

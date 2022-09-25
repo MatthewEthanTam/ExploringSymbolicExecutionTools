@@ -1,41 +1,30 @@
-// MIT License
-pragma solidity ^0.8.0;
-contract Ownership {
-    address  owner = msg.sender;
-    function Owner() public {
-        owner = msg.sender;
-    }
-    modifier isOwner() {
-        require(owner == msg.sender);
+contract Ownership{  // It can have an owner!
+        address owner = msg.sender;
+        function Onwer() public{
+                owner = msg.sender;
+        }
+        // modifier isOwner(){
+        //         require(owner == msg.sender);
+        //         _;
+        // }
+}
+contract Pausable is Ownership{ //It is also pausable. You can pause it. You can resume it.
+    bool is_paused;
+    modifier ifNotPaused(){
+        require(!is_paused);
         _;
+    }
+    function paused() public{
+        is_paused = true;
+    }
+    function resume() public{
+        is_paused = false;
     }
 }
-contract Pausable is Ownership {
-    bool public paused = false;
-    event Pause();
-    event Unpause();
-    modifier whenNotPaused() {
-        require(!paused);
-        _;
-    }
-    modifier whenPaused() {
-        require(paused);
-        _;
-    }
-    function pause() public isOwner {
-        paused = true;
-        emit Pause();
-    }
-    function unpause() public isOwner {
-        paused = false;
-        emit Unpause();
-    }
-}
-
-contract Token is Pausable {
-    mapping (address => uint256) public balances;
-    function transfer (address to, uint value) whenNotPaused public {
-        balances[msg.sender] -= value;
-        balances[to] += value;
+contract Token is Pausable{ //<< HERE it is.
+    mapping(address => uint) public balances; // It maintains a balance sheet
+    function transfer(address to, uint value) ifNotPaused public{  //and can transfer value
+        balances[msg.sender] -= value; // from one account
+        balances[to] += value;         // to the other
     }
 }
