@@ -21,8 +21,4 @@ contract Reentrance {
         }
         userBalance[msg.sender] = 0;
     }
-
-    // function getBool (bool, bytes u) public{
-    //     return u[0];
-    // }
 }
