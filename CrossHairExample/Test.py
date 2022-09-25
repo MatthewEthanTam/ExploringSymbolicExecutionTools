@@ -22,29 +22,3 @@ def getMax(numbers: List[float]) -> float:
     post:  __return__ == max(numbers)
     '''
     return max(numbers)
-
-
-from dataclasses import dataclass
-from enum import Enum
-from typing import Optional
-
-class VehicleType(Enum):
-    CAR = 1
-    TRUCK = 2
-    MOTORCYCLE = 3
-    BICYCLE = 4
-
-@dataclass(init = False)
-
-class Vehicle:
-    type =  VehicleType
-    fuel_level =  Optional[float]
-
-def isUsable(vehicle: Vehicle) -> bool:
-    ''' 
-    pre: vehicle.type == VehicleType.BICYCLE
-    post:  vehicle.type in [VehicleType.TRUCK, VehicleType.MOTORCYCLE, VehicleType.CAR]
-    '''
-    if vehicle.type == VehicleType.CAR:
-        return True
-    return vehicle.fuel_level > 0
