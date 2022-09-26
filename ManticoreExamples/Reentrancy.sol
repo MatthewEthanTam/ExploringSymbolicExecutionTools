@@ -12,7 +12,7 @@ contract Reentrance {
         userBalance[msg.sender] += msg.value;
     }
 
-    function withdrawBalance() public {
+    function crytic_test_withdrawBalance() public {
         // send userBalance[msg.sender] ethers to msg.sender
         // if mgs.sender is a contract, it will call its fallback function
         bool b = (payable(msg.sender).send(userBalance[msg.sender]) );

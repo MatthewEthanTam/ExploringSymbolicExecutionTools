@@ -19,6 +19,8 @@ def isUsable(vehicle: Vehicle) -> bool:
     if vehicle.type == VehicleType.CAR:
         return True
     assert vehicle.type in [VehicleType.TRUCK, VehicleType.MOTORCYCLE, VehicleType.CAR]
+    if vehicle.fuel_level is None :
+        return False
     return vehicle.fuel_level > 0
 
 def isUsableFixed(vehicle: Vehicle) -> bool:
@@ -26,4 +28,5 @@ def isUsableFixed(vehicle: Vehicle) -> bool:
     if vehicle.type == VehicleType.BICYCLE:
         return True
     assert vehicle.type in [VehicleType.TRUCK, VehicleType.MOTORCYCLE, VehicleType.CAR]
+    
     return vehicle.fuel_level > 0

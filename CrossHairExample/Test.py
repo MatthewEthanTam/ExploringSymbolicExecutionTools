@@ -13,7 +13,7 @@ def sumNumbers(numbers: List[float]) -> float:
 def getDifferenceOfMaxAndMin(numbers: List[float]) -> float:
     ''' 
     pre: len(numbers) >0
-    post: max(numbers) - min(numbers)
+    post: __return__ == max(numbers) - min(numbers)
     '''
     return min(numbers) - max(numbers) 
 def getMax(numbers: List[float]) -> float:
